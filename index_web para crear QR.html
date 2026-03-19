@@ -579,10 +579,10 @@
                 </div>
                 
                 <div class="links">
-                    <a href="https://www.terminalconstanti.com/docs/CondicionesAccesoConstanti.pdf" target="_blank" class="link">
+                    <a href="https://www.ingrearWeb.extension" target="_blank" class="link">
                         📄 Condiciones de acceso
                     </a>
-                    <a href="google.com/maps/dir//Terminal+de+Mercaderies+de+Constantí,+Av.+de+les+Puntes,+514,+43120+Constantí,+Tarragona/@41.12384,1.2642761,14z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x12a156e8856dd33d:0x9b489fd331f56664!2m2!1d1.1575365!2d41.1653509?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link">
+                    <a href="https://www.ingrearMAPA.extension" target="_blank" class="link">
                         🗺️ Cómo llegar...
                     </a>
                 </div>
@@ -607,13 +607,10 @@
                 
                 <form id="registroEntradaForm">
                     <div class="form-grid">
+                        <!-- Campo cliente ahora es input de texto -->
                         <div class="form-group">
-                            <label for="clienteEntrada">Cliente</label>
-                            <select id="clienteEntrada" required>
-                                <option value="">Seleccione empresa...</option>
-                                <option value="KLOG">KLOG</option>
-                                <option value="ENCATRANS">ENCATRANS</option>
-                            </select>
+                            <label for="clienteEntrada">Cliente / Empresa</label>
+                            <input type="text" id="clienteEntrada" placeholder="Ingrese nombre de la empresa" required>
                         </div>
 
                         <div class="form-group">
@@ -654,7 +651,6 @@
                                 <option value="BILBAO-KLOG">BILBAO-KLOG</option>
                                 <option value="STOCK-NORMAL">STOCK-NORMAL</option>
                                 <option value="STOCK-ESPECIAL">STOCK-ESPECIAL</option>
-                                <option value="BILBAO-KLOG">BILBAO-KLOG</option>
                                 <option value="CAMBIO UTI DE PLATAFORMA">CAMBIO UTI DE PLATAFORMA</option>
                                 <option value="GIRAR CONTENEDOR">GIRAR CONTENEDOR</option>
                             </select>
@@ -676,7 +672,6 @@
                                 <option value="BILBAO-KLOG">BILBAO-KLOG</option>
                                 <option value="STOCK-NORMAL">STOCK-NORMAL</option>
                                 <option value="STOCK-ESPECIAL">STOCK-ESPECIAL</option>
-                                <option value="BILBAO-KLOG">BILBAO-KLOG</option>
                                 <option value="CAMBIO UTI DE PLATAFORMA">CAMBIO UTI DE PLATAFORMA</option>
                                 <option value="GIRAR CONTENEDOR">GIRAR CONTENEDOR</option>
                             </select>
@@ -755,13 +750,10 @@
                 
                 <form id="registroSalidaForm">
                     <div class="form-grid">
+                        <!-- Campo cliente ahora es input de texto -->
                         <div class="form-group">
-                            <label for="clienteSalida">Cliente</label>
-                            <select id="clienteSalida" required>
-                                <option value="">Seleccione empresa...</option>
-                                <option value="KLOG">KLOG</option>
-                                <option value="ENCATRANS">ENCATRANS</option>
-                            </select>
+                            <label for="clienteSalida">Cliente / Empresa</label>
+                            <input type="text" id="clienteSalida" placeholder="Ingrese nombre de la empresa" required>
                         </div>
 
                         <div class="form-group">
@@ -968,6 +960,9 @@
 
         // Inicializar eventos cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', () => {
+            // Deshabilitar el botón derecho del ratón en toda la página
+            document.addEventListener('contextmenu', event => event.preventDefault());
+
             // Lógica de visualización de campos para ENTRADA
             const cargadoToggleEntrada = document.getElementById('contenedorCargadoEntrada');
             const cargadoContainerEntrada = document.getElementById('cargadoToggleEntrada');
